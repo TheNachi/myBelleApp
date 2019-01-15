@@ -8,7 +8,7 @@ class Login extends Component {
 
     render() {
         return (
-            <ImageBackground source={require('../assets/MainBackground.jpg')} style={{ width: '100%', height: '100%'}}>
+            <ImageBackground source={require('../../assets/MainBackground.jpg')} style={{ width: '100%', height: '100%'}}>
                 <View style={{ alignItems: 'center', height: '100%'}}>
                     <Text style={{ fontSize: 35, fontWeight: "500", color: 'white', marginTop: '60%'}}>
                         Welcome to Mybellé
@@ -19,7 +19,7 @@ class Login extends Component {
                     <TouchableOpacity style={styles.buttonStyle}>
                         <Text style={{ alignSelf: 'center', paddingTop: '4%', paddingBottom: '4%', fontSize: 20, fontWeight: "500", color: 'white'}}>Sign up</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{ backgroundColor: 'rgb(255, 255, 255)', opacity: 0.6, borderRadius: '4%', marginLeft: '1%', marginRight: '1%', marginTop: '2%', width: '85%' }}>
+                    <TouchableOpacity onPress={() => Actions.login()} style={{ backgroundColor: 'rgb(255, 255, 255)', opacity: 0.6, borderRadius: '4%', marginLeft: '1%', marginRight: '1%', marginTop: '2%', width: '85%' }}>
                         <Text style={{ alignSelf: 'center', paddingTop: '4%', paddingBottom: '4%', fontSize: 20, fontWeight: "500", color: 'rgb(153, 101, 21)'}}>Log in</Text>
                     </TouchableOpacity>
                 </View>

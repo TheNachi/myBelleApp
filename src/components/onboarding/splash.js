@@ -13,7 +13,7 @@ import { Actions } from 'react-native-router-flux'
 
   render() {
     return (
-        <ImageBackground source={require('../assets/MainBackground.jpg')} style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center',}}>
+        <ImageBackground source={require('../../assets/MainBackground.jpg')} style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center',}}>
         </ImageBackground>
     );
   }
