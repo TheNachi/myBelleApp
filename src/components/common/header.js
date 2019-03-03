@@ -52,7 +52,7 @@ const styles = {
         padding: 10
     },
     viewStyle: {
-        backgroundColor: '#fff',
+        backgroundColor: '#DF44E4',
         justifyContent: 'center',
         alignItems: 'center',
         height: 70,
