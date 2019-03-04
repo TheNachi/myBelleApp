@@ -9,7 +9,7 @@ const Inpu = ({ label, value, onChangeText, placeholder, secureTextEntry, iconNa
     return (
         <View style={containerStyle}>
             <View style={{ flexDirection: 'row', padding: 5 }}>
-                <Icon name='facebook' type='feather' size={30} color='black' />
+                <Icon name={iconName} type='feather' size={30} color='black' />
                 <TextInput
                     secureTextEntry={secureTextEntry}
                     placeholder={placeholder}
@@ -51,7 +51,7 @@ const styles = {
         // elevation: 1,
         marginLeft: 30,
         marginRight: 30,
-        marginTop: 15,
+        marginTop: 20,
         //backgroundColor: '#f2f2f2'
 
     },

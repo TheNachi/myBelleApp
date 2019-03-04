@@ -4,6 +4,7 @@ import Header from '../common/header'
 import Input from '../common/input'
 import Inpu from '../common/inpu'
 import Modal from 'react-native-modal'
+import Actions from 'react-native-router-flux'
 
 class Signup extends Component {
     state = {
@@ -39,23 +40,23 @@ class Signup extends Component {
                     </TouchableOpacity>
                     
                 </View>
-                <TouchableOpacity onPress={() => Actions.login()} style={{ backgroundColor: '#DF44E4', borderRadius: '4%', marginLeft: '1%', marginRight: '1%', marginTop: '2%', width: '85%', alignSelf: 'center'  }}>
+                <TouchableOpacity style={{ backgroundColor: '#DF44E4', borderRadius: '4%', marginLeft: '1%', marginRight: '1%', marginTop: '2%', width: '85%', alignSelf: 'center'  }}>
                     <Text style={{ alignSelf: 'center', paddingTop: '4%', paddingBottom: '4%', fontSize: 20, fontWeight: "500", color: 'white'}}>Sign up</Text>
                 </TouchableOpacity>
                 <View style={{ flexDirection: 'row', paddingTop: 100, alignSelf: 'center'}}>
                     <Text style={{ fontSize: 16, color: '#515A5A' }}>Already have an account</Text>
-                    <TouchableOpacity onPress={() => Actions.l()}>
+                    <TouchableOpacity onPress={() => Actions.login()}>
                         <Text style={{ color: '#4D7DA9', paddingLeft: 10, fontSize: 16, fontWeight: '600'}}>Log in</Text>
                     </TouchableOpacity>
                 </View>
                 <Modal 
                     isVisible={this.state.isModalVisible}
-                    onBackdropPress={() => this.setState({ isVisible: false })}>
-                    <View style={{ flex: 1 }}>
-                        <Text>Hello!</Text>
-                        <TouchableOpacity onPress={this._toggleModal}>
-                            <Text>Hide me!</Text>
-                        </TouchableOpacity>
+                    onBackdropPress={() => this.setState({ isModalVisible: false })}>
+                    <View style={{ width:'80%', height:'80%', alignSelf: 'center', backgroundColor: 'white', alignItems: 'center', justifyContent: "center"}}>
+                        <Text>When was the first day of your last menstrual period</Text>
+                        <TouchableOpacity onPress={this._toggleModal} style={{ backgroundColor: '#DF44E4', borderRadius: '4%', marginLeft: '1%', marginRight: '1%', marginTop: '2%', width: '85%', alignSelf: 'center'  }}>
+                    <Text style={{ alignSelf: 'center', paddingTop: '4%', paddingBottom: '4%', fontSize: 20, fontWeight: "500", color: 'white'}}>Calculate </Text>
+                </TouchableOpacity>
                     </View>
                 </Modal>
             </View>

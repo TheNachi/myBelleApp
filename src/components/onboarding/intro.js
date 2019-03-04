@@ -19,16 +19,16 @@ class Login extends Component {
                     </Text>
                     <LinearGradient
                     colors={[ '#4D7DA9'  , '#DF44E4']}
-                    style={{ borderRadius: 5, marginLeft: '1%', marginRight: '1%', marginTop: '2%', width: '85%', alignItems: 'center'}}
+                    style={{ borderRadius: 5, marginLeft: '1%', marginRight: '1%', marginTop: '2%', width: '85%', alignItems: 'center', height: 55}}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 0 }}
                         >
-                    <TouchableOpacity onPress={() => Actions.signup()} style={styles.buttonStyle}>
-                        <Text style={{ paddingTop: '4%', paddingBottom: '4%', fontSize: 20, fontWeight: "500", color: 'white'}}>Sign up</Text>
-                    </TouchableOpacity>
+                        <TouchableOpacity onPress={() => Actions.signup()} style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
+                            <Text style={{ fontSize: 26, fontWeight: "600", paddingTop: 5, color: 'white'}}>Sign up</Text>
+                        </TouchableOpacity>
                     </LinearGradient>
                     <TouchableOpacity onPress={() => Actions.login()} style={{ backgroundColor: 'rgb(255, 255, 255)', opacity: 0.6, borderRadius: '4%', marginLeft: '1%', marginRight: '1%', marginTop: '4%', width: '85%'}}>
-                        <Text style={{ alignSelf: 'center', paddingTop: '4%', paddingBottom: '4%', fontSize: 20, fontWeight: "500", color: '#DF44E4'}}>Log in</Text>
+                        <Text style={{ alignSelf: 'center', paddingTop: '4%', paddingBottom: '4%', fontSize: 26, fontWeight: "600", color: '#DF44E4'}}>Log in</Text>
                     </TouchableOpacity>
                 </View>
             </ImageBackground>
