@@ -9,10 +9,10 @@ const Navigation = () => {
     return (
         <Router>
             <Stack key="onboarding">
-                <Scene key="splash" component={Splash} initial hideNavBar />
+                <Scene key="splash" component={Splash} hideNavBar />
                 <Scene key="intro" component={Intro} hideNavBar />
                 <Scene key="login" component={Login} hideNavBar />
-                <Scene key="signup" component={Signup} hideNavBar />
+                <Scene key="signup" component={Signup} initial hideNavBar />
             </Stack>
         </Router>
     );

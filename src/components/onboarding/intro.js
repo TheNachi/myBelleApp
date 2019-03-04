@@ -18,7 +18,7 @@ class Login extends Component {
                         Pregnancy App
                     </Text>
                     <LinearGradient
-                    colors={[ '#4D7DA9'  , '#DF44E4']}
+                    colors={[ '#4d2ec9'  , '#cf32f2']}
                     style={{ borderRadius: 5, marginLeft: '1%', marginRight: '1%', marginTop: '2%', width: '85%', alignItems: 'center', height: 55}}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 0 }}

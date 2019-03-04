@@ -23,29 +23,33 @@ class Login extends Component {
             <Inpu
                 label="Email"
                 placeholder="Email Address"
+                iconName="email-outline"
             />
             <Inpu
                 label="Password"
                 placeholder="Password"
+                iconName="lock-outline"
             />
             <TouchableOpacity style={{ padding: 15, alignSelf: 'flex-end', marginRight: 15 }}>
-                <Text style={{ color:'#4D7DA9', fontWeight: '500', fontSize: 18 }}>
+                <Text style={{ color:'#4b38c4', fontWeight: '500', fontSize: 18 }}>
                     Forgot your password?
                 </Text>
             </TouchableOpacity>
             <LinearGradient
-                    colors={[ '#4D7DA9'  , '#DF44E4']}
+                    colors={[ '#4d2ec9'  , '#cf32f2']}
                     style={{ borderRadius: 5, marginLeft: '1%', marginRight: '1%', marginTop: '2%', width: '85%', alignItems: 'center', height: 55, alignSelf: 'center'}}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 0 }}
                         >
-                        <TouchableOpacity onPress={() => Actions.signup()} style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
-                            <Text style={{ fontSize: 26, fontWeight: "600", paddingTop: 5, color: 'white'}}>Sign up</Text>
-                        </TouchableOpacity>
-                    </LinearGradient>
+                    <TouchableOpacity onPress={() => Actions.signup()} style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
+                        <Text style={{ fontSize: 26, fontWeight: "600", paddingTop: 5, color: 'white'}}>Log in</Text>
+                    </TouchableOpacity>
+            </LinearGradient>
             <View style={{ flexDirection: 'row', paddingTop: 100, alignSelf: 'center'}}>
-                <Text style={{ fontSize: 16, color: '#515A5A' }}>Don't have an account?</Text>
-                <Text style={{ color: '#4D7DA9', paddingLeft: 10, fontSize: 16, fontWeight: '600'}}>Sign up</Text>
+                <Text style={{ fontSize: 16, color: '#262728' }}>Don't have an account?</Text>
+                <TouchableOpacity onPress={() => Actions.signup()}>
+                        <Text style={{ color: '#4b38c4', paddingLeft: 10, fontSize: 16, fontWeight: '600'}}>Sign up</Text>
+                    </TouchableOpacity>
             </View>
             </View>
         )
@@ -59,7 +63,7 @@ const styles = {
         marginTop: '20%',
         marginLeft: '10%',
         fontWeight: '400',
-        color: 'gray',
+        color: '#262728',
         marginBottom: '16%'
     }
 }

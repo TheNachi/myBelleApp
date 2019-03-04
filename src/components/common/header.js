@@ -8,7 +8,7 @@ const Header = ({ onPress, title, leftIcon, rightIcon }) => {
 
         return (
             <LinearGradient
-                    colors={[ '#4D7DA9'  , '#DF44E4']}
+                    colors={[ '#4d2ec9'  , '#cf32f2']}
                     style={{ alignItems: 'center', justifyContent: 'center', height: 70, paddingTop: 15, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.6, elevation: 2, position: 'relative', flexDirection: 'row'}}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 0 }}
