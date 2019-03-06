@@ -36,18 +36,5 @@ class Login extends Component {
     }
 }
 
-const styles = {
-    buttonStyle: {
-        // backgroundColor: 'rgb(153, 101, 21)',
-        // borderRadius: '4%',
-        // marginLeft: '1%',
-        // marginRight: '1%',
-        // marginTop: '2%',
-        // marginBottom: '3%',
-        // alignItems: 'center'
-        
-    },
-}
-
 
 export default Login;

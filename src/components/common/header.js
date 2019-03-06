@@ -23,7 +23,7 @@ const Header = ({ onPress, title, leftIcon, rightIcon }) => {
                     </View>
                     <View style={styles.iconViewStyle}>
                         <TouchableOpacity>
-                            <Icon name={rightIcon} size={25} style={styles.iconStyle} /> 
+                            <Icon name={rightIcon} size={30} style={styles.iconStyle} color='white' /> 
                         </TouchableOpacity>
                     </View>
             </LinearGradient>
@@ -57,7 +57,7 @@ const styles = {
         width: 86,
     }, 
     thumbnailViewStyle: {
-        flex: 1,
+        flex: 5,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -69,10 +69,6 @@ const styles = {
     },
     iconViewStyle: {
         flex: 1,
-        justifyContent: 'flex-end',
-        alignItems: 'stretch',
-        flexDirection: 'row',
-        padding: 10
     }
 };
  

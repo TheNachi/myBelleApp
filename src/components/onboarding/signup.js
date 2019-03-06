@@ -57,7 +57,7 @@ class Signup extends Component {
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 0 }}
                         >
-                    <TouchableOpacity onPress={() => Actions.signup()} style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
+                    <TouchableOpacity onPress={() => Actions.home()} style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
                         <Text style={{ fontSize: 26, fontWeight: "600", paddingTop: 5, color: 'white'}}>Sign up</Text>
                     </TouchableOpacity>
                 </LinearGradient>
