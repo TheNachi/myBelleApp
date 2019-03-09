@@ -37,7 +37,7 @@ class Login extends Component {
             </TouchableOpacity>
             <LinearGradient
                     colors={[ '#4d2ec9'  , '#cf32f2']}
-                    style={{ borderRadius: 5, marginLeft: '1%', marginRight: '1%', marginTop: '2%', width: '85%', alignItems: 'center', height: 55, alignSelf: 'center'}}
+                    style={{ borderRadius: 5, marginLeft: 4, marginRight: 4, marginTop: 20, width: '85%', alignItems: 'center', height: 55, alignSelf: 'center'}}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 0 }}
                         >
@@ -59,12 +59,12 @@ class Login extends Component {
 const styles = {
     textStyle: {
         fontSize: 30,
-        padding: '1%',
-        marginTop: '20%',
-        marginLeft: '10%',
+        padding: 10,
+        marginTop: 60,
+        marginLeft: 25,
         fontWeight: '400',
         color: '#262728',
-        marginBottom: '16%'
+        marginBottom: 40
     }
 }
 

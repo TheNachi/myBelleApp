@@ -44,34 +44,34 @@ class Signup extends Component {
                         placeholder="Due date"
                         iconName="calendar-multiselect"
                     />
-                </View>
-                <View style={{ flexDirection: 'row', alignSelf: 'center', marginTop: 20, marginBottom: 50 }}>
-                    <Text style={{ fontSize: 16, color: '#515A5A' }}>Not sure of your Due date?</Text>
-                    <TouchableOpacity onPress={this._toggleModal}>
-                        <Text style={{ color: '#4b38c4', paddingLeft: 10, fontSize: 16, fontWeight: '600'}}>Calculate</Text>
-                    </TouchableOpacity>
-                </View>
-                <LinearGradient
-                    colors={[ '#4d2ec9'  , '#cf32f2']}
-                    style={{ borderRadius: 5, marginLeft: '1%', marginRight: '1%', marginTop: '2%', width: '85%', alignItems: 'center', height: 55, alignSelf: 'center'}}
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 1, y: 0 }}
-                        >
-                    <TouchableOpacity onPress={() => Actions.home()} style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
-                        <Text style={{ fontSize: 26, fontWeight: "600", paddingTop: 5, color: 'white'}}>Sign up</Text>
-                    </TouchableOpacity>
-                </LinearGradient>
-                <View style={{ flexDirection: 'row', alignSelf: 'center', marginTop: 90 }}>
-                    <Text style={{ fontSize: 16, color: '#515A5A' }}>Already have an account?</Text>
-                    <TouchableOpacity onPress={() => Actions.login()}>
-                        <Text style={{ color: '#4b38c4', paddingLeft: 7, fontSize: 16, fontWeight: '600'}}>Log in</Text>
-                    </TouchableOpacity>
+                    <View style={{ flexDirection: 'row', alignSelf: 'center', marginTop: 20, marginBottom: 50 }}>
+                        <Text style={{ fontSize: 16, color: '#515A5A' }}>Not sure of your Due date?</Text>
+                        <TouchableOpacity onPress={this._toggleModal}>
+                            <Text style={{ color: '#4b38c4', paddingLeft: 10, fontSize: 16, fontWeight: '600'}}>Calculate</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <LinearGradient
+                        colors={[ '#4d2ec9'  , '#cf32f2']}
+                        style={{ borderRadius: 5, marginLeft: '1%', marginRight: '1%', marginTop: '2%', width: '85%', alignItems: 'center', height: 55, alignSelf: 'center'}}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 0 }}
+                            >
+                        <TouchableOpacity onPress={() => Actions.home()} style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
+                            <Text style={{ fontSize: 26, fontWeight: "600", paddingTop: 5, color: 'white'}}>Sign up</Text>
+                        </TouchableOpacity>
+                    </LinearGradient>
+                    <View style={{ flexDirection: 'row', alignSelf: 'center', marginTop: 70 }}>
+                        <Text style={{ fontSize: 16, color: '#515A5A' }}>Already have an account?</Text>
+                        <TouchableOpacity onPress={() => Actions.login()}>
+                            <Text style={{ color: '#4b38c4', paddingLeft: 7, fontSize: 16, fontWeight: '600'}}>Log in</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
                 <Modal 
                     isVisible={this.state.isModalVisible}
                     onBackdropPress={() => this.setState({ isModalVisible: false })}>
                     <View style={{ width:'90%', height:'60%', alignSelf: 'center', backgroundColor: 'white'}}>
-                        <TouchableOpacity onPress={()=> this.setState({ isModalVisible: false })} style={{ alignSelf: 'flex-end', padding: 15 }}>
+                        <TouchableOpacity onPress={()=> this.setState({ isModalVisible: false })} style={{ alignSelf: 'flex-end', padding: 10 }}>
                             <Icon name="close" size={30} color='#b5b3b7' />
                         </TouchableOpacity>
                         <Text style={{ fontSize: 25, padding: 20, marginTop: 5 }}>
@@ -84,7 +84,7 @@ class Signup extends Component {
                         />
                         <LinearGradient
                             colors={[ '#4d2ec9'  , '#cf32f2']}
-                            style={{ borderRadius: 5, marginLeft: '1%', marginRight: '1%', marginTop: '10%', width: '85%', alignItems: 'center', height: 55, alignSelf: 'center'}}
+                            style={{ borderRadius: 5, marginLeft: 10, marginRight: 10, marginTop: 40, width: '85%', alignItems: 'center', height: 55, alignSelf: 'center'}}
                             start={{ x: 0, y: 0 }}
                             end={{ x: 1, y: 0 }}
                                 >
@@ -94,22 +94,10 @@ class Signup extends Component {
                         </LinearGradient>
                     </View>
                 </Modal>
+
             </View>
         )
     }
 }
-
-const styles = {
-    textStyle: {
-        fontSize: 28,
-        padding: '1%',
-        marginTop: '20%',
-        marginLeft: '10%',
-        fontWeight: '400',
-        color: 'gray',
-        marginBottom: '20%'
-    }
-}
-
 
 export default Signup

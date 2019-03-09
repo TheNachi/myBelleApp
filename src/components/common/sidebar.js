@@ -22,7 +22,7 @@ class Sidebar extends Component {
                 <Text style={{ fontSize: 20, color: 'white', alignSelf: 'center', fontWeight: '600', padding: 5}}>
                     Aboy Likethat
                 </Text>
-                <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }}>
+                <TouchableOpacity style={{ flexDirection: "row", marginTop: 20 }} onPress={() => Actions.calendar()} >
                     <Icon name='calendar-multiselect' size={30} color='#619dd8' style={{ paddingLeft: 5}} />
                     <Text style={{ fontSize: 20, fontWeight: "600", color: '#f4b642', padding: 5}}>Calendar</Text>
                 </TouchableOpacity>
@@ -30,7 +30,7 @@ class Sidebar extends Component {
                     <Icon name='wechat' size={30} color='#619dd8' style={{ paddingLeft: 5}} />
                     <Text style={{ fontSize: 20, fontWeight: "600", color: '#f4b642', padding: 5}}>MyBellé Community</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={{ flexDirection: "row" }}>
+                <TouchableOpacity style={{ flexDirection: "row" }} onPress={() => Actions.home()}>
                     <Icon name='account' size={30} color='#619dd8' style={{ paddingLeft: 5}} />
                     <Text style={{ fontSize: 20, fontWeight: "600", color: '#f4b642', padding: 5}}>Find a healthcare provider</Text>
                 </TouchableOpacity>

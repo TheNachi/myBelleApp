@@ -1,32 +1,17 @@
 import React, { Component } from 'react';
 import { View, Image, Text, ImageBackground, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import Modal from 'react-native-modal'
-import Sidebar from '../common/sidebar'
 import { Actions } from 'react-native-router-flux'
 import { LinearGradient } from 'expo'
-import Header from '../common/header'
 
 
-class MyBelleCommunity extends Component {
-
-    state = {
-        selected: undefined,
-        isModalVisible: false
-    }
-
-    onValueChange = (value) =>
-        this.setState({
-          selected: value
-        });
-
-    _toggleModal = () => this.setState({ isModalVisible: !this.state.isModalVisible })
+class MyPregnancy extends Component {
 
     multiplyComments = () => {
         return (
             <View style={{ padding: 15, borderTopWidth: 1, borderBottomWidth: 1, borderColor: 'gray' }}>
                 <View style={{ flexDirection: 'row'}}>
-                    <Image style={{ height: 50, width: 50, }} source={require('../../assets/placeholderPicture.jpg')} />
+                    <Image style={{ height: 50, width: 50, }} />
                     <View style={{  paddingLeft: 5 }}>
                         <View style={{ flexDirection: 'row', flex: 1 }}>
                             <Text style={{ fontWeight: '700', fontSize: 16 }}>
@@ -62,33 +47,17 @@ class MyBelleCommunity extends Component {
 
     render() {
         return (
-            <View style={{ flex: 1}}>
-                <Header 
-                    title="Mybellé Community"
-                    leftIcon="menu"
-                    onPress={this._toggleModal}
-                />
-                <ScrollView style={{ flex: 1}}>
-                    {this.multiplyComments()}
+            <View>
+                <ScrollView>
                     {this.multiplyComments()}
                     {this.multiplyComments()}
                     {this.multiplyComments()}
                     {this.multiplyComments()}
                 </ScrollView>
-                <Modal
-                    isVisible={this.state.isModalVisible}
-                    onBackdropPress={() => this.setState({ isModalVisible: false })}
-                    animationIn="slideInLeft"
-                    animationOut="slideOutRight"
-                    >
-                    <View style={{ width:'90%', height:'105%', marginLeft: -17}}>
-                        <Sidebar />
-                    </View>
-                </Modal>
             </View>
         )
     }
 }
 
 
-export default MyBelleCommunity;
+export default MyPregnancy;

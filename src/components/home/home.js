@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView, FlatList } from 'react-native'
 import { Container, Content, Picker, Form } from "native-base"
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Modal from 'react-native-modal'
@@ -27,19 +27,19 @@ class Home extends Component {
 
     render() {
         return (
-            <View style={{ backgroundColor: "white", height: '100%', width: '100%' }}>
+            <View style={{ backgroundColor: "white", height: '100%', width: '100%', flex: 1 }}>
                 <Header 
                     title="Find a Healthcare Provider"
                     onPress={this._toggleModal}
                     leftIcon='menu'
                     rightIcon='search'
                 />
-                <ScrollView>
+                <ScrollView style={{ flex: 1}}>
                 <View style={{ alignSelf: 'flex-end', padding: 10}}>
                     <Text style={styles.textStyle}>
                         Filter by Location
                     </Text>
-                    <View style={{ borderWidth: 1, borderColor: "#cf32f2"}}>
+                    <View style={{ borderWidth: 1, borderColor: "#cf32f2", height: 50 }}>
                     <Form>
                         <Picker
                             mode="dropdown"

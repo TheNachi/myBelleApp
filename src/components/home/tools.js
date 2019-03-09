@@ -3,15 +3,30 @@ import { View, Image, Text, ImageBackground, TouchableOpacity, StyleSheet } from
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Actions } from 'react-native-router-flux'
 import { LinearGradient } from 'expo'
+import Modal from 'react-native-modal'
+import Sidebar from '../common/sidebar'
+
 
 
 class Tools extends Component {
 
+    state = {
+        selected: undefined,
+        isModalVisible: false
+    }
+
+    onValueChange = (value) =>
+        this.setState({
+          selected: value
+        });
+
+    _toggleModal = () => this.setState({ isModalVisible: !this.state.isModalVisible })
+
     render() {
         return (
-            <View>
+            <View style={{ flex:1}}>
                 <View style={styles.viewStyle}>
-                    <TouchableOpacity style={styles.backViewStyle} onPress={() => Actions.pop()}>
+                    <TouchableOpacity style={styles.backViewStyle} onPress={() => this._toggleModal()}>
                         <Icon name='menu' size={30} style={styles.iconStyle} color='gray' />
                     </TouchableOpacity>
                     <View style={styles.thumbnailViewStyle}>
@@ -22,7 +37,7 @@ class Tools extends Component {
                 </View>
                 <LinearGradient
                     colors={[ '#4d2ec9'  , '#cf32f2']}
-                    style={{ height: '90%'}}
+                    style={{ flex: 1}}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 0, y: 1 }}
                         >
@@ -65,6 +80,16 @@ class Tools extends Component {
                             </TouchableOpacity>
                         </View>
                 </LinearGradient>
+                <Modal
+                    isVisible={this.state.isModalVisible}
+                    onBackdropPress={() => this.setState({ isModalVisible: false })}
+                    animationIn="slideInLeft"
+                    animationOut="slideOutRight"
+                    >
+                    <View style={{ width:'90%', height:'105%', marginLeft: -17}}>
+                        <Sidebar />
+                    </View>
+                </Modal>
             </View>
         )
     }

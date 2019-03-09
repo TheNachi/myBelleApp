@@ -9,20 +9,22 @@ import Hospital from './home/hospital'
 import Sidebar from './common/sidebar'
 import Tools from './home/tools'
 import MyBelleCommunity from './home/myBelleCommunity'
+import Calendar from './home/calendar/calendar';
 
 const Navigation = () => {
     return (
         <Router>
             <Stack key="onboarding">
-                <Scene key="splash" component={Splash} hideNavBar />
+                <Scene key="splash" component={Splash} initial hideNavBar />
                 <Scene key="intro" component={Intro} hideNavBar />
                 <Scene key="login" component={Login} hideNavBar />
                 <Scene key="signup" component={Signup} hideNavBar />
-                <Drawer key='drawer' initial hideNavBar>
-                    <Scene key='home' initial component={Home} hideNavBar />
+                <Drawer key='drawer' hideNavBar>
+                    <Scene key='home' component={Home} hideNavBar />
                     <Scene key='hospital' component={Hospital} hideNavBar />
                     <Scene key='tools' component={Tools} hideNavBar/>
                     <Scene key='myBelleCommunity' component={MyBelleCommunity} hideNavBar/>
+                    <Scene key='calendar' component={Calendar} hideNavBar />
                 </Drawer>
             </Stack>
         </Router>

@@ -37,7 +37,6 @@ const styles = {
     containerStyle: {
         height: 40,
         flexDirection: 'column',
-        alignItems: 'left',
         // borderWidth: 2,
         // borderRadius: 2,
         // borderColor: '#ddd',
@@ -52,7 +51,7 @@ const styles = {
         // elevation: 1,
         marginLeft: 30,
         marginRight: 30,
-        marginTop: 20,
+        marginTop: 30,
         //backgroundColor: '#f2f2f2'
 
     },
