@@ -21,7 +21,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.obaro.mybelleapp"
+    },
+    "android": {
+      "package": "com.obaro.mybelleapp"
     }
   }
 }
