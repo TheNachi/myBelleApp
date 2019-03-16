@@ -5,7 +5,7 @@ import { Actions } from 'react-native-router-flux'
 import { LinearGradient } from 'expo'
 
 
-class Login extends Component {
+class Intro extends Component {
 
     render() {
         return (
@@ -37,4 +37,4 @@ class Login extends Component {
 }
 
 
-export default Login;
+export default Intro;

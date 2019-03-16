@@ -4,8 +4,6 @@ import { Container, Content, Picker, Form } from "native-base"
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Modal from 'react-native-modal'
 import Header from '../common/header'
-import Input from '../common/input'
-import Inpu from '../common/inpu'
 import { Actions } from 'react-native-router-flux'
 import Card from '../common/card'
 import Sidebar from '../common/sidebar'
