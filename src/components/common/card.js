@@ -26,6 +26,8 @@ const styles = {
         marginLeft: 5,
         marginRight: 5,
         marginTop: 10,
+        width: '90%',
+        alignSelf: 'center'
     }
 };
 

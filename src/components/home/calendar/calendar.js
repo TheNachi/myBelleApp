@@ -28,6 +28,7 @@ _toggleModal = () => this.setState({ isModalVisible: !this.state.isModalVisible 
             title="Calendar" 
             leftIcon='menu'
             rightIcon="search"
+            onPress={this._toggleModal}
             hasTabs 
             />
         <Tabs 
