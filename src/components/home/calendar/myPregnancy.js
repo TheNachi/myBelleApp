@@ -1,27 +1,44 @@
 import React, { Component } from 'react'
-import { View, Text, Image, ScrollView, ImageBackground } from 'react-native'
+import { View, Text, Image, ScrollView, ImageBackground, TouchableOpacity, Platform } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
 import Card from'../../common/card'
+
+var radio_props = [
+    {label: 'Less attractive', value: 0 },
+    {label: 'More attractive', value: 1 },
+    {label: 'I feel the same', value: 1 }
+  ];
 
 class Mypregnancy extends Component {
     
+    state = {
+        value: 0
+    } 
+
     render() {
         return (
             <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
                 <ScrollView style={{ flex: 1, width: '100%'  }}>
-                    <View style={{ alignItems: 'center', marginTop: 10,alignSelf: 'center', justifyContent: 'center', borderWidth: 5, flexDirection: 'row', width: '90%', flex: 1}}>
+                    <View style={{ alignItems: 'center', marginTop: 10, alignSelf: 'center', flexDirection: 'row', width: '90%', flex: 1}}>
                     <ImageBackground 
-                        style={{ height: 150, width: 200, flex: 1 }}
+                        style={{ height: 160, flex: 1, alignSelf: 'center'}}
                         source={require('../../../assets/15weeks.jpeg')}
                         >
-                        <View>
+                        <View style={{ height: 50, width: '100%', backgroundColor: 'gray', opacity: 0.8, position: 'absolute', bottom: 0, justifyContent: 'center', padding: 5}}>
+                            <Text style={{ color: 'white', alignSelf: 'center' }}>
+                                You're 15 weeks 5 days pregnant
+                            </Text>
                         </View>
                     </ImageBackground>
                     <ImageBackground 
-                        style={{ height: 150, width: 200, flex: 1 }}
+                        style={{ height: 160, flex: 1, alignSelf: 'center' }}
                         source={require('../../../assets/apple.jpeg')}
                         >
-                        <View>
+                        <View style={{ height: 50, width: '100%', backgroundColor: 'gray', opacity: 0.8, position: 'absolute', bottom: 0, justifyContent: 'center', padding: 5 }}>
+                            <Text style={{ color: 'white', alignSelf: 'center' }}>
+                                Your baby is about the size of an apple
+                            </Text>
                         </View>
                     </ImageBackground>
                     </View>
@@ -76,6 +93,31 @@ class Mypregnancy extends Component {
                             <Image style={{ height: 150, width: '100%', alignSelf: 'center', marginTop: 5, marginBottom: 5 }} source={require('../../../assets/Pregnancy-weight.jpg')} />
                             <Text style={{ fontSize: 22, }}>
                                 Seasonal allergic rhinitis (hay fever) is most often caused by pollen......
+                            </Text>
+                        </View>
+                    </Card>
+                    <Card>
+                        <View style={styles.containerStyle}> 
+                            <View style={{ flexDirection: 'row'}}>
+                                <Icon name='file-document-box-outline' size={30} color='#cf32f2' style={{  }} />
+                                <Text style={{ color: '#cf32f2', padding: 5, fontSize: 20, fontWeight: '600' }}>
+                                    Poll
+                                </Text>
+                            </View>
+                            <Text style={{ fontSize: 22, marginBottom: 10 }}>
+                                Does being pregnant  make you feel more or less attractive 
+                            </Text>
+                            <RadioForm
+                                radio_props={radio_props}
+                                initial={0}
+                                onPress={(value) => {this.setState({value:value})}}
+                                />
+                            <TouchableOpacity style={{ backgroundColor: 'gray', opacity: 
+                            0.6, borderRadius: 4, width: '60%', marginTop: 10, marginBottom: 10 }}>
+                                <Text style={{alignSelf: 'center', paddingTop: 10, paddingBottom: 10, fontSize: 26,}}>Vote</Text>
+                            </TouchableOpacity>
+                            <Text style={{ fontSize: 22, marginTop: 10, color: '#cf32f2' }}>
+                                Show results
                             </Text>
                         </View>
                     </Card>

@@ -38,7 +38,7 @@ class Sidebar extends Component {
                     <Icon name='settings' size={30} color='#619dd8'style={{ paddingLeft: 5}} />
                     <Text style={{ fontSize: 20, fontWeight: "600", color: '#f4b642', padding: 5}}>Tools</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={{ flexDirection: "row" }} onPress={() => Actions.calendar()}>
+                <TouchableOpacity style={{ flexDirection: "row" }} >
                     <Icon name='more' size={30} color='#619dd8' style={{ paddingLeft: 5}} />
                     <Text style={{ fontSize: 20, fontWeight: "600", color: '#f4b642', padding: 5}}>More</Text>
                 </TouchableOpacity>

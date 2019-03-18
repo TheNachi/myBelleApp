@@ -17,16 +17,16 @@ const Navigation = () => {
     return (
         <Router>
             <Stack key="onboarding">
-                <Scene key="splash" component={Splash} hideNavBar />
+                <Scene key="splash" initial component={Splash} hideNavBar />
                 <Scene key="intro" component={Intro} hideNavBar />
                 <Scene key="login" component={Login} hideNavBar />
                 <Scene key="signup" component={Signup} hideNavBar />
-                <Drawer key='drawer' initial hideNavBar>
+                <Drawer key='drawer' hideNavBar>
                     <Scene key='home' component={Home} hideNavBar />
                     <Scene key='hospital' component={Hospital} hideNavBar />
                     <Scene key='tools' component={Tools} hideNavBar />
                     <Scene key='myBelleCommunity' component={MyBelleCommunity} hideNavBar />
-                    <Scene key='calendar' initial component={Calendar} hideNavBar />
+                    <Scene key='calendar' component={Calendar} hideNavBar />
                 </Drawer>
             </Stack>
         </Router>
