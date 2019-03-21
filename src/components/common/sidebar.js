@@ -15,10 +15,7 @@ class Sidebar extends Component {
                 start={{ x: 0, y: 0 }}
                 end={{ x: 0, y: 1 }}
                 >
-                <TouchableOpacity onPress={()=> Actions.home()} style={{ alignSelf: 'flex-end', padding: 15 }}>
-                    <Icon name="close" size={30} color='#f4b642' />
-                </TouchableOpacity>
-                <Image style={{ height: 120, width: 120, borderRadius: 120/2, alignSelf: 'center' }} source={require('../../assets/placeholderPicture.jpg')} />
+                <Image style={{ height: 120, width: 120, borderRadius: 120/2, alignSelf: 'center', marginTop: 40 }} source={require('../../assets/placeholderPicture.jpg')} />
                 <Text style={{ fontSize: 20, color: 'white', alignSelf: 'center', fontWeight: '600', padding: 5}}>
                     Aboy Likethat
                 </Text>
@@ -41,6 +38,10 @@ class Sidebar extends Component {
                 <TouchableOpacity style={{ flexDirection: "row" }} >
                     <Icon name='more' size={30} color='#619dd8' style={{ paddingLeft: 5}} />
                     <Text style={{ fontSize: 20, fontWeight: "600", color: '#f4b642', padding: 5}}>More</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={{ flexDirection: "row" }} >
+                    <Icon name='comment-question' size={30} color='#619dd8' style={{ paddingLeft: 5}} />
+                    <Text style={{ fontSize: 20, fontWeight: "600", color: '#f4b642', padding: 5}}>FAQs during Pregnancy</Text>
                 </TouchableOpacity>
             </LinearGradient>
                     

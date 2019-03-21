@@ -53,10 +53,10 @@ class Mypregnancy extends Component {
                             <Text style={{ fontSize: 22, }}>
                                 How will you feel/What to do about it 
                             </Text>
-                            <Text style={{ paddingTop: 15, fontSize: 16 }}>
+                            <Text style={{ paddingTop: 20, fontSize: 20, color: '#cf32f2' }}>
                                 Today's tips: Do you know?
                             </Text>
-                            <Text style={{ fontSize: 16}}>
+                            <Text style={{ fontSize: 22 }}>
                                 You may experience stuffy nose and sinusitis
                             </Text>
                         </View>
@@ -65,33 +65,33 @@ class Mypregnancy extends Component {
                         <View style={styles.containerStyle}> 
                             <View style={{ flexDirection: 'row'}}>
                                 <Icon name='file-document-box-outline' size={30} color='#cf32f2' style={{  }} />
-                                <Text style={{ color: '#cf32f2', padding: 5, fontSize: 20, fontWeight: '600' }}>
+                                <Text style={{ color: '#cf32f2', padding: 5, fontSize: 22, fontWeight: '600' }}>
                                     Your To Do Lists
                                 </Text>
                             </View>
-                            <Text style={{ fontSize: 22, }}>
+                            <Text style={{ fontSize: 18, }}>
                                 Add activities to carry out this week
                             </Text>
                         </View>
                     </Card>
                     <Card>
                         <View style={styles.containerStyle}> 
-                            <Text style={{ fontSize: 22, }}>
+                            <Text style={{ fontSize: 22, color: '#cf32f2' }}>
                                 Rhinitis During Pregnancy: Flu, Cough and Catarrh
                             </Text>
                             <Image style={{ height: 150, width: '100%', alignSelf: 'center', marginTop: 5, marginBottom: 5 }} source={require('../../../assets/nasal-cavity.jpeg')} />
-                            <Text style={{ fontSize: 22, }}>
+                            <Text style={{ fontSize: 18, }}>
                                 Seasonal allergic rhinitis (hay fever) is most often caused by pollen......
                             </Text>
                         </View>
                     </Card>
                     <Card>
                         <View style={styles.containerStyle}> 
-                            <Text style={{ fontSize: 22, }}>
+                            <Text style={{ fontSize: 22, color: '#cf32f2' }}>
                                 Weight gain during pregnancy
                             </Text>
                             <Image style={{ height: 150, width: '100%', alignSelf: 'center', marginTop: 5, marginBottom: 5 }} source={require('../../../assets/Pregnancy-weight.jpg')} />
-                            <Text style={{ fontSize: 22, }}>
+                            <Text style={{ fontSize: 18, }}>
                                 Seasonal allergic rhinitis (hay fever) is most often caused by pollen......
                             </Text>
                         </View>
@@ -112,8 +112,7 @@ class Mypregnancy extends Component {
                                 initial={0}
                                 onPress={(value) => {this.setState({value:value})}}
                                 />
-                            <TouchableOpacity style={{ backgroundColor: 'gray', opacity: 
-                            0.6, borderRadius: 4, width: '60%', marginTop: 10, marginBottom: 10 }}>
+                            <TouchableOpacity style={{ backgroundColor: 'gray', opacity: 0.6, borderRadius: 4, width: '60%', marginTop: 10, marginBottom: 10 }}>
                                 <Text style={{alignSelf: 'center', paddingTop: 10, paddingBottom: 10, fontSize: 26,}}>Vote</Text>
                             </TouchableOpacity>
                             <Text style={{ fontSize: 22, marginTop: 10, color: '#cf32f2' }}>
@@ -123,11 +122,11 @@ class Mypregnancy extends Component {
                     </Card>
                     <Card>
                         <View style={styles.containerStyle}> 
-                            <Text style={{ fontSize: 22, }}>
+                            <Text style={{ fontSize: 22, color: '#cf32f2' }}>
                                 Exercise: Putting pillows between your legs to deal with Sciatic Pain
                             </Text>
                             <Image style={{ height: 150, width: '100%', alignSelf: 'center', marginTop: 5, marginBottom: 5 }} source={require('../../../assets/pregnancy-pillow.jpg')} />
-                            <Text style={{ fontSize: 22, }}>
+                            <Text style={{ fontSize: 18, }}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do wousmod tempor indhdifnnfi...
                             </Text>
                         </View>

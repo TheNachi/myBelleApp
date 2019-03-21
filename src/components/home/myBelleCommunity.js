@@ -67,6 +67,7 @@ class MyBelleCommunity extends Component {
                     title="Mybellé Community"
                     leftIcon="menu"
                     onPress={this._toggleModal}
+                    rightIcon='comment'
                 />
                 <ScrollView style={{ flex: 1}}>
                     {this.multiplyComments()}

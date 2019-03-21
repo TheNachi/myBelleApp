@@ -1,19 +1,23 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import Header from '../common/header'
-import Input from '../common/input'
 import Inpu from '../common/inpu'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { DatePicker } from 'native-base'
 import Modal from 'react-native-modal'
 import { Actions } from 'react-native-router-flux'
 import { LinearGradient } from 'expo'
 
 class Signup extends Component {
     state = {
-        isModalVisible: false
+        isModalVisible: false,
+        chosenDate: new Date()
     }
 
     _toggleModal = () => this.setState({ isModalVisible: !this.state.isModalVisible })
+
+    setDate = (newDate) => this.setState({ chosenDate: newDate });
+      
 
     render() {
         return (
@@ -39,11 +43,27 @@ class Signup extends Component {
                         placeholder="Password"
                         iconName="lock-outline"
                     />
-                    <Inpu
-                        label="Due date"
-                        placeholder="Due date"
-                        iconName="calendar-multiselect"
-                    />
+                    <View style={{ marginLeft: 30, marginRight: 30, marginTop: 30}}>
+                        <View style={{ flexDirection: 'row'}}>
+                            <Icon name='calendar-multiselect' size={30} color='black' style={{ paddingLeft: 5}} />
+                            <DatePicker
+                            defaultDate={new Date(2018, 4, 4)}
+                            minimumDate={new Date(2016, 1, 1)}
+                            maximumDate={new Date(2022, 12, 31)}
+                            locale={"en"}
+                            timeZoneOffsetInMinutes={undefined}
+                            modalTransparent={false}
+                            animationType={"fade"}
+                            androidMode={"default"}
+                            placeHolderText="Select due date"
+                            textStyle={{ color: "green" }}
+                            placeHolderTextStyle={{ color: "#d3d3d3" }}
+                            onDateChange={this.setDate}
+                            disabled={false}
+                            />
+                        </View>
+                        <View style={{ borderWidth: 0.5, borderColor: 'gray', backgroundColor: 'blue', width:'100%'}}></View>
+                    </View>
                     <View style={{ flexDirection: 'row', alignSelf: 'center', marginTop: 20, marginBottom: 50 }}>
                         <Text style={{ fontSize: 16, color: '#515A5A' }}>Not sure of your Due date?</Text>
                         <TouchableOpacity onPress={this._toggleModal}>
@@ -77,11 +97,27 @@ class Signup extends Component {
                         <Text style={{ fontSize: 25, padding: 20, marginTop: 5 }}>
                             When was the first day of your last menstrual period
                         </Text>
-                        <Inpu
-                            label="Choose a date"
-                            placeholder="Choose a date"
-                            iconName="calendar-multiselect"
-                        />
+                        <View style={{ marginLeft: 30, marginRight: 30, marginTop: 30}}>
+                        <View style={{ flexDirection: 'row'}}>
+                            <Icon name='calendar-multiselect' size={30} color='black' style={{ paddingLeft: 5}} />
+                            <DatePicker
+                            defaultDate={new Date(2018, 4, 4)}
+                            minimumDate={new Date(2016, 1, 1)}
+                            maximumDate={new Date(2022, 12, 31)}
+                            locale={"en"}
+                            timeZoneOffsetInMinutes={undefined}
+                            modalTransparent={false}
+                            animationType={"fade"}
+                            androidMode={"default"}
+                            placeHolderText="Select date"
+                            textStyle={{ color: "green" }}
+                            placeHolderTextStyle={{ color: "#d3d3d3" }}
+                            onDateChange={this.setDate}
+                            disabled={false}
+                            />
+                        </View>
+                        <View style={{ borderWidth: 0.5, borderColor: 'gray', backgroundColor: 'blue', width:'100%'}}></View>
+                    </View>
                         <LinearGradient
                             colors={[ '#4d2ec9'  , '#cf32f2']}
                             style={{ borderRadius: 5, marginLeft: 10, marginRight: 10, marginTop: 40, width: '85%', alignItems: 'center', height: 55, alignSelf: 'center'}}
