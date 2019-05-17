@@ -44,28 +44,28 @@ class Mypregnancy extends Component {
                     </View>
                     <Card>
                         <View style={styles.containerStyle}> 
-                            <View style={{ flexDirection: 'row'}}>
-                                <Icon name='calendar-multiselect' size={30} color='#cf32f2' style={{  }} />
-                                <Text style={{ color: '#cf32f2', padding: 5, fontSize: 20, fontWeight: '600' }}>
-                                    Trimester Changes
-                                </Text>
-                            </View>
-                            <Text style={{ fontSize: 22, }}>
-                                How will you feel/What to do about it 
-                            </Text>
-                            <Text style={{ paddingTop: 20, fontSize: 20, color: '#cf32f2' }}>
+                            <Text style={{ paddingTop: 5, fontSize: 20, color: '#4d2ec9' }}>
                                 Today's tips: Do you know?
                             </Text>
                             <Text style={{ fontSize: 22 }}>
                                 You may experience stuffy nose and sinusitis
                             </Text>
+                            <View style={{ flexDirection: 'row', paddingTop: 20 }}>
+                                <Icon name='calendar-multiselect' size={30} color='#4d2ec9' style={{  }} />
+                                <Text style={{ color: '#4d2ec9', padding: 5, fontSize: 20, fontWeight: '600' }}>
+                                    Trimester Changes
+                                </Text>
+                            </View>
+                            <Text style={{ fontSize: 22, }}>
+                                How will you feel/What to do about it 
+                            </Text>    
                         </View>
                     </Card>
                     <Card>
                         <View style={styles.containerStyle}> 
                             <View style={{ flexDirection: 'row'}}>
-                                <Icon name='file-document-box-outline' size={30} color='#cf32f2' style={{  }} />
-                                <Text style={{ color: '#cf32f2', padding: 5, fontSize: 22, fontWeight: '600' }}>
+                                <Icon name='file-document-box-outline' size={30} color='#4d2ec9' style={{  }} />
+                                <Text style={{ color: '#4d2ec9', padding: 5, fontSize: 22, fontWeight: '600' }}>
                                     Your To Do Lists
                                 </Text>
                             </View>
@@ -76,7 +76,7 @@ class Mypregnancy extends Component {
                     </Card>
                     <Card>
                         <View style={styles.containerStyle}> 
-                            <Text style={{ fontSize: 22, color: '#cf32f2' }}>
+                            <Text style={{ fontSize: 22, color: '#4d2ec9', fontWeight: '700' }}>
                                 Rhinitis During Pregnancy: Flu, Cough and Catarrh
                             </Text>
                             <Image style={{ height: 150, width: '100%', alignSelf: 'center', marginTop: 5, marginBottom: 5 }} source={require('../../../assets/nasal-cavity.jpeg')} />
@@ -87,7 +87,7 @@ class Mypregnancy extends Component {
                     </Card>
                     <Card>
                         <View style={styles.containerStyle}> 
-                            <Text style={{ fontSize: 22, color: '#cf32f2' }}>
+                            <Text style={{ fontSize: 22, color: '#4d2ec9' }}>
                                 Weight gain during pregnancy
                             </Text>
                             <Image style={{ height: 150, width: '100%', alignSelf: 'center', marginTop: 5, marginBottom: 5 }} source={require('../../../assets/Pregnancy-weight.jpg')} />
@@ -99,8 +99,8 @@ class Mypregnancy extends Component {
                     <Card>
                         <View style={styles.containerStyle}> 
                             <View style={{ flexDirection: 'row'}}>
-                                <Icon name='file-document-box-outline' size={30} color='#cf32f2' style={{  }} />
-                                <Text style={{ color: '#cf32f2', padding: 5, fontSize: 20, fontWeight: '600' }}>
+                                <Icon name='file-document-box-outline' size={30} color='#4d2ec9' style={{  }} />
+                                <Text style={{ color: '#4d2ec9', padding: 5, fontSize: 20, fontWeight: '600' }}>
                                     Poll
                                 </Text>
                             </View>
@@ -115,14 +115,14 @@ class Mypregnancy extends Component {
                             <TouchableOpacity style={{ backgroundColor: 'gray', opacity: 0.6, borderRadius: 4, width: '60%', marginTop: 10, marginBottom: 10 }}>
                                 <Text style={{alignSelf: 'center', paddingTop: 10, paddingBottom: 10, fontSize: 26,}}>Vote</Text>
                             </TouchableOpacity>
-                            <Text style={{ fontSize: 22, marginTop: 10, color: '#cf32f2' }}>
+                            <Text style={{ fontSize: 22, marginTop: 10, color: '#4d2ec9' }}>
                                 Show results
                             </Text>
                         </View>
                     </Card>
                     <Card>
                         <View style={styles.containerStyle}> 
-                            <Text style={{ fontSize: 22, color: '#cf32f2' }}>
+                            <Text style={{ fontSize: 22, color: '#4d2ec9' }}>
                                 Exercise: Putting pillows between your legs to deal with Sciatic Pain
                             </Text>
                             <Image style={{ height: 150, width: '100%', alignSelf: 'center', marginTop: 5, marginBottom: 5 }} source={require('../../../assets/pregnancy-pillow.jpg')} />
@@ -141,7 +141,7 @@ const styles = {
     textStyle: {
         fontSize: 16,
         fontWeight: '400',
-        color: '#cf32f2',
+        color: '#4d2ec9',
         paddingBottom: 5
     },
     containerStyle: {
