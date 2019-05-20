@@ -7,19 +7,108 @@ import { DatePicker } from 'native-base'
 import Modal from 'react-native-modal'
 import { Actions } from 'react-native-router-flux'
 import { LinearGradient } from 'expo'
+import { post as axiosPost } from 'axios';
+import Validator from '../../libraries/validator';
 
 class Signup extends Component {
     state = {
         isModalVisible: false,
-        chosenDate: new Date()
+        chosenDate: new Date(),
+        fieldValues: {
+            username: '',
+            email: '',
+            password: '',
+        },
+        fieldErrors: {
+            username: '',
+            email: '',
+            password: '',
+        },
     }
+
+    fieldRules = {
+        username: {
+            required: 'Username is required',
+        },
+        email: {
+            required: 'Email address is required',
+            valid_email: 'Provide a valid email address'
+        },
+        password: {
+            required: 'Password is required'
+        },
+    };
 
     _toggleModal = () => this.setState({ isModalVisible: !this.state.isModalVisible })
 
     setDate = (newDate) => this.setState({ chosenDate: newDate });
-      
 
+    handleTextInput = (name, value) => {
+        const { fieldValues } = this.state;
+        fieldValues[name] = value;
+        this.setState({ fieldValues });
+
+        this.validateField(name, value);
+    };
+
+    createUser() {
+        if (this.validateForm()) {
+            const { fieldValues } = this.state;
+    
+            axiosPost('auth/local/register', fieldValues, {
+                baseURL: 'https://mybelle-staging.herokuapp.com',
+            })
+                .then(({ data }) => {
+                    console.log(data);
+    
+                    Actions.home();
+                })
+                .catch(error => console.log(error));
+        }
+    }
+
+    validateField(field, value) {
+        const rules = {
+            [field]: this.fieldRules[field]
+        };
+
+        const validator = new Validator({
+            [field]: value,
+        });
+        const { fieldErrors } = this.state;
+        if (!validator.validate(rules)) {
+            fieldErrors[field] = validator.getErrors()[field];
+        } else {
+            fieldErrors[field] = '';
+        }
+        this.setState({ fieldErrors });
+    }
+
+    validateForm() {
+        const { fieldValues } = this.state;
+        const validator = new Validator(fieldValues);
+
+        const success = validator.validate(this.fieldRules);
+        if (!success) {
+            this.setState({ fieldErrors: validator.getErrors() });
+        }
+        return success;
+    }
+
+    hasError() {
+        const { fieldErrors } = this.state;
+        return fieldErrors.username || fieldErrors.email || fieldErrors.password;
+    }
+    
     render() {
+        const { fieldErrors } = this.state;
+
+        const errorStyle = {
+            color: '#c00',
+            marginLeft: 30,
+            marginTop: 3,
+        };
+
         return (
             <View style={{ backgroundColor: "white", height: '100%', width: '100%' }}>
                 <Header 
@@ -32,17 +121,23 @@ class Signup extends Component {
                         label="Username"
                         placeholder="Username"
                         iconName="account-outline"
+                        onChangeText={text => this.handleTextInput('username', text)}
                     />
+                    {!!fieldErrors.username && <Text style={errorStyle}>{fieldErrors.username}</Text>}
                     <Inpu
                         label="Email Address"
                         placeholder="Email Address"
                         iconName="email-outline"
+                        onChangeText={text => this.handleTextInput('email', text)}
                     />
+                    {!!fieldErrors.email && <Text style={errorStyle}>{fieldErrors.email}</Text>}
                     <Inpu
                         label="Password"
                         placeholder="Password"
                         iconName="lock-outline"
+                        onChangeText={text => this.handleTextInput('password', text)}
                     />
+                    {!!fieldErrors.password && <Text style={errorStyle}>{fieldErrors.password}</Text>}
                     <View style={{ marginLeft: 30, marginRight: 30, marginTop: 30}}>
                         <View style={{ flexDirection: 'row'}}>
                             <Icon name='calendar-multiselect' size={30} color='black' style={{ paddingLeft: 5}} />
@@ -76,7 +171,7 @@ class Signup extends Component {
                         start={{ x: 0, y: 0 }}
                         end={{ x: 1, y: 0 }}
                             >
-                        <TouchableOpacity onPress={() => Actions.home()} style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
+                        <TouchableOpacity onPress={() => this.createUser()} style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
                             <Text style={{ fontSize: 26, fontWeight: "600", paddingTop: 5, color: 'white'}}>Sign up</Text>
                         </TouchableOpacity>
                     </LinearGradient>
