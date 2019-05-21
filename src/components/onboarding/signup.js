@@ -9,6 +9,7 @@ import { Actions } from 'react-native-router-flux'
 import { LinearGradient } from 'expo'
 import { post as axiosPost } from 'axios';
 import Validator from '../../libraries/validator';
+import { API_HOST } from '../../config';
 
 class Signup extends Component {
     state = {
@@ -62,7 +63,7 @@ class Signup extends Component {
             this.setState({ working: true });
     
             axiosPost('auth/local/register', fieldValues, {
-                baseURL: 'https://mybelle-staging.herokuapp.com',
+                baseURL: API_HOST,
             })
                 .then(({ data }) => {
                     console.log(data);
