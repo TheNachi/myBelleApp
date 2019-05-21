@@ -24,6 +24,7 @@ class Signup extends Component {
             email: '',
             password: '',
         },
+        working: false,
     }
 
     fieldRules = {
@@ -52,8 +53,13 @@ class Signup extends Component {
     };
 
     createUser() {
+        const { fieldValues, working } = this.state;
+        if (working) {
+            return;
+        }
+
         if (this.validateForm()) {
-            const { fieldValues } = this.state;
+            this.setState({ working: true });
     
             axiosPost('auth/local/register', fieldValues, {
                 baseURL: 'https://mybelle-staging.herokuapp.com',
@@ -63,7 +69,9 @@ class Signup extends Component {
     
                     Actions.home();
                 })
-                .catch(error => console.log(error));
+                .catch(error => {
+                    this.setState({ working: false });
+                });
         }
     }
 
