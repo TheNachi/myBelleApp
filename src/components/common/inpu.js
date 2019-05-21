@@ -26,7 +26,7 @@ const Inpu = ({ label, value, onChangeText, placeholder, secureTextEntry, iconNa
 
 const styles = {
     inputStyle: {
-        color: '#f1f1f1',
+        color: '#111111',
         paddingRight: 5,
         paddingLeft: 5,
         paddingTop: 7,
